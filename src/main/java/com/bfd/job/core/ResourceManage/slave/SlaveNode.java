@@ -16,7 +16,7 @@ import com.bfd.job.core.ResourceManage.master.MasterHandler;
  * @description:
  */
 public class SlaveNode<V> implements Future<V> {
-	
+
 	private static final Logger logger = Logger.getLogger(SlaveNode.class);
 
 	public SlaveNode() {

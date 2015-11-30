@@ -7,13 +7,16 @@ import org.apache.poi.ss.formula.functions.T;
 /**
  * @author: BFD474
  *
- * @description: 
+ * @description:
  */
 public class JobSchedulePool extends BasePoolableObjectFactory<T> {
-	
-	private static final Logger logger = Logger.getLogger(JobSchedulePool.class);
 
-	/* (non-Javadoc)
+	private static final Logger logger = Logger
+			.getLogger(JobSchedulePool.class);
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.apache.commons.pool.BasePoolableObjectFactory#makeObject()
 	 */
 	@Override

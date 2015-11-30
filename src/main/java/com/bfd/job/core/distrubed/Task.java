@@ -10,7 +10,7 @@ import com.bfd.job.enums.NodeEnums;
  * @description: 各个节点执行任务
  */
 public class Task implements Runnable {
-	
+
 	private static final Logger logger = Logger.getLogger(Task.class);
 
 	private String MOrS = ""; // master or slave

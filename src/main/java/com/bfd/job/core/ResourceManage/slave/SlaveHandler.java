@@ -14,7 +14,7 @@ import org.jboss.netty.channel.SimpleChannelUpstreamHandler;
  * @description: Slave端相当于服务器端
  */
 public class SlaveHandler extends SimpleChannelUpstreamHandler {
-	
+
 	private static final Logger logger = Logger.getLogger(SlaveHandler.class);
 
 	@Override

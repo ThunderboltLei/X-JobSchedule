@@ -14,9 +14,9 @@ import org.jboss.netty.channel.SimpleChannelUpstreamHandler;
  * @description:
  */
 public class MasterHandler extends SimpleChannelUpstreamHandler {
-	
+
 	private static final Logger logger = Logger.getLogger(MasterHandler.class);
-	
+
 	@Override
 	public void messageReceived(ChannelHandlerContext ctx, MessageEvent e) {
 		// 接受消息处理

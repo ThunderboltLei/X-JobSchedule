@@ -25,8 +25,9 @@ import com.bfd.job.enums.TaskEnums;
  * @description: ResourceManager接收任务，并分发任务
  */
 public class ResourceManager {
-	
-	private static final Logger logger = Logger.getLogger(ResourceManager.class);
+
+	private static final Logger logger = Logger
+			.getLogger(ResourceManager.class);
 
 	public static String WEB_ROOT = "C:/Users/BFD474/Desktop/"; // 服务器根目录，post.html,
 																// upload.html都放在该位置
@@ -43,16 +44,16 @@ public class ResourceManager {
 		this.port = port;
 		this.requestPath = null;
 	}
-	
+
 	// ResourceManager根据任务类型，选择处理逻辑
-	public void switchTask(String taskName, String token, String timestamp){
+	public void switchTask(String taskName, String token, String timestamp) {
 		// 在线数据包，区别于在线单条，因为是个数据集，所以采用分布式处理
-		if(TaskEnums.OnlinePackages.getTaskName().equals(taskName)){
-			
+		if (TaskEnums.OnlinePackages.getTaskName().equals(taskName)) {
+
 		}
 		// 离线数据包，如果包含多个文件，则采用分布式处理。master合并数据文件，再提交spark任务
-		else if(TaskEnums.OfflinePackages.getTaskName().equals(taskName)){
-			
+		else if (TaskEnums.OfflinePackages.getTaskName().equals(taskName)) {
+
 		}
 	}
 
@@ -334,7 +335,8 @@ public class ResourceManager {
 	}
 
 	public static void main(String args[]) throws Exception {
-		ResourceManager server = new ResourceManager("/home/lm8212/Desktop", 9999);
+		ResourceManager server = new ResourceManager("/home/lm8212/Desktop",
+				9999);
 		server.service();
 	}
 }

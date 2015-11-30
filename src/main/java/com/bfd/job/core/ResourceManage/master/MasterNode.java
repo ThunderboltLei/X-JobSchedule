@@ -3,6 +3,7 @@ package com.bfd.job.core.ResourceManage.master;
 import java.net.InetSocketAddress;
 import java.util.concurrent.Executors;
 
+import org.apache.log4j.Logger;
 import org.jboss.netty.bootstrap.ServerBootstrap;
 import org.jboss.netty.channel.ChannelFactory;
 import org.jboss.netty.channel.ChannelPipeline;
@@ -19,6 +20,8 @@ import org.jboss.netty.handler.codec.string.StringEncoder;
  * @description:
  */
 public class MasterNode {
+	
+	private static final Logger logger = Logger.getLogger(MasterNode.class);
 
 	public MasterNode() {
 
@@ -41,6 +44,8 @@ public class MasterNode {
 		bootstrap.setOption("child.tcpNoDelay", true);
 		bootstrap.setOption("child.keepAlive", true);
 		bootstrap.bind(new InetSocketAddress(15112));
+		
+		logger.info("Start Master...");
 	}
 
 }

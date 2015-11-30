@@ -15,8 +15,8 @@ import com.bfd.job.core.ResourceManage.master.MasterHandler;
  *
  * @description: Resource
  */
-public class ResourceHandler extends SimpleChannelUpstreamHandler{
-	
+public class ResourceHandler extends SimpleChannelUpstreamHandler {
+
 	private static final Logger logger = Logger.getLogger(MasterHandler.class);
 
 	@Override
@@ -53,7 +53,5 @@ public class ResourceHandler extends SimpleChannelUpstreamHandler{
 		// TODO Auto-generated method stub
 		super.writeComplete(ctx, e);
 	}
-	
-	
 
 }

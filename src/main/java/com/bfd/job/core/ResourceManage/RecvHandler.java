@@ -8,8 +8,9 @@ import java.io.OutputStream;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
 
-import org.apache.http.HttpResponse;
+import org.apache.log4j.Logger;
 
+import com.bfd.job.core.ResourceManage.slave.SlaveNode;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
@@ -23,9 +24,11 @@ import com.sun.net.httpserver.HttpHandler;
  */
 
 public class RecvHandler implements HttpHandler {
+	
+	private static final Logger logger = Logger.getLogger(RecvHandler.class);
 
 	public RecvHandler() {
-		System.out.println("initialize a httphandler...");
+		logger.info("initialize a httphandler...");
 	}
 
 	/*
@@ -46,11 +49,11 @@ public class RecvHandler implements HttpHandler {
 		// String responseMsg =
 		// "<?xml version=\"1.0\" encoding=\"UTF-8\"?><a><a1>a1</a1><a2>a2</a2></a>";
 
-		System.out.println("key: " + httpExchange.getAttribute("key"));
+		logger.info("key: " + httpExchange.getAttribute("key"));
 		
 //		Headers headers = httpExchange.getRequestHeaders();
 //		for(Map.Entry<String,List<String>> e : headers.entrySet()){
-//			System.out.println(e.getKey());
+//			logger.info(e.getKey());
 //		}
 			
 		DataInputStream in = new DataInputStream(httpExchange.getRequestBody()); // 获得输入流
@@ -62,10 +65,10 @@ public class RecvHandler implements HttpHandler {
 				body += temp.trim();
 			}
 		}
-		System.out.println("\nclient request: " + URLDecoder.decode(body));
+		logger.info("\nclient request: " + URLDecoder.decode(body));
 
 		int xmlLength = body.length();
-		System.out.println("xmlLength: " + xmlLength);
+		logger.info("xmlLength: " + xmlLength);
 		httpExchange.sendResponseHeaders(200, xmlLength * 2); // 设置响应头属性及响应信息的长度
 		OutputStream out = httpExchange.getResponseBody(); // 获得输出流
 

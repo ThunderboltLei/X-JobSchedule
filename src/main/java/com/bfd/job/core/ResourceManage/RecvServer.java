@@ -18,7 +18,7 @@ import com.sun.net.httpserver.spi.HttpServerProvider;
  * @description: 处理接收到文件的服务
  */
 public class RecvServer {
-	
+
 	private static final Logger logger = Logger.getLogger(RecvServer.class);
 
 	private static RecvServer httpServer;
