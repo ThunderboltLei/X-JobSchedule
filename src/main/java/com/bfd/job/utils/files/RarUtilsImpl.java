@@ -3,6 +3,8 @@ package com.bfd.job.utils.files;
 import java.io.File;
 import java.io.FileOutputStream;
 
+import org.apache.log4j.Logger;
+
 import de.innosystec.unrar.Archive;
 import de.innosystec.unrar.rarfile.FileHeader;
 
@@ -12,6 +14,8 @@ import de.innosystec.unrar.rarfile.FileHeader;
  * @description:
  */
 public class RarUtilsImpl {
+	
+	private static final Logger logger = Logger.getLogger(RarUtilsImpl.class);
 
 	public static void readRAR(File rar, File destDir) throws Exception {
 		Archive archive = null;

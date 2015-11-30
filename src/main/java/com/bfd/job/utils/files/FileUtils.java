@@ -1,5 +1,7 @@
 package com.bfd.job.utils.files;
 
+import org.apache.log4j.Logger;
+
 /**
  * @author: BFD474
  *

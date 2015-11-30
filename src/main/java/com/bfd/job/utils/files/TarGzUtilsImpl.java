@@ -17,7 +17,7 @@ import org.apache.log4j.Logger;
  * @description: tar.gz - LINUX
  */
 public class TarGzUtilsImpl implements FileUtils {
-
+	
 	private final static Logger LOGGER = Logger.getLogger(TarGzUtilsImpl.class);
 
 	// tar.gz - LINUX

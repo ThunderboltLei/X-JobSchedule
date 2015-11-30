@@ -10,12 +10,16 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 import java.util.zip.ZipInputStream;
 
+import org.apache.log4j.Logger;
+
 /**
  * @author: BFD474
  *
  * @description:
  */
 public class ZipUtilsImpl implements FileUtils {
+	
+	private static final Logger logger = Logger.getLogger(ZipUtilsImpl.class);
 
 	public static void readZIP(File zip) throws Exception {
 		ZipFile zf = new ZipFile(zip);
@@ -26,7 +30,7 @@ public class ZipUtilsImpl implements FileUtils {
 			if (ze.isDirectory()) {
 				continue;
 			}
-			System.err.println("file - " + ze.getName() + " : " + ze.getSize()
+			logger.info("file - " + ze.getName() + " : " + ze.getSize()
 					+ " bytes");
 			long size = ze.getSize();
 			if (size > 0) {
@@ -34,11 +38,11 @@ public class ZipUtilsImpl implements FileUtils {
 						zf.getInputStream(ze)));
 				String line;
 				while ((line = br.readLine()) != null) {
-					System.out.println(line);
+					logger.info(line);
 				}
 				br.close();
 			}
-			System.out.println();
+			logger.info("");
 		}
 		zin.closeEntry();
 	}
@@ -49,8 +53,7 @@ public class ZipUtilsImpl implements FileUtils {
 			ZipUtilsImpl
 					.readZIP(new File("C://Users//BFD474//Desktop//my.zip"));
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error(e.fillInStackTrace());
 		}
 
 	}

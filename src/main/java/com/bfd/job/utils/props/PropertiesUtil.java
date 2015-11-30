@@ -2,12 +2,17 @@ package com.bfd.job.utils.props;
 
 import java.util.Properties;
 
+import org.apache.log4j.Logger;
+
 /**
  * @author: BFD474
  *
  * @description:
  */
 public class PropertiesUtil {
+	
+	private static final Logger logger = Logger.getLogger(PropertiesUtil.class);
+	
 	public static Properties props //
 	; //
 

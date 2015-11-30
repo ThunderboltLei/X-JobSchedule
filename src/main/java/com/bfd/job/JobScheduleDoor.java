@@ -17,7 +17,7 @@ import com.bfd.job.utils.props.PropertiesUtil;
  */
 public class JobScheduleDoor {
 	// logger
-	private static final Logger __LOGGER__ = Logger
+	private static final Logger logger = Logger
 			.getLogger(JobScheduleDoor.class);
 
 	private static final String _MASTER_ = "MASTER";
@@ -44,7 +44,7 @@ public class JobScheduleDoor {
 		// 添加 MASTER / SLAVES 到缓存
 		master = prop.getProperty(_MASTER_);
 		slave = prop.getProperty(_SLAVE_);
-		System.out.println(master + ", " + slave);
+		logger.info(master + ", " + slave);
 
 		// 设置 master / slaves
 		try {
@@ -71,7 +71,7 @@ public class JobScheduleDoor {
 				}
 			}
 		} catch (Exception e) {
-			__LOGGER__.error("PS: Something Wrong~~~ " + e);
+			logger.error("PS: Something Wrong~~~ " + e);
 		}
 
 	}
